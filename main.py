@@ -66,4 +66,7 @@ def predictedPrice():
         else:
             return str(round(float(result), 2)) + " $USD"
     except:
-        return "Exception !!"         
+        return "Exception !!"
+
+if __name__ == "__main__":
+    app.run(debug = True)         
