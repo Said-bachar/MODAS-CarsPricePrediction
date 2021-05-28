@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MODAS | Cars Price Prediction</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="{{ url_for('static', filename='car.ico') }}" type="image/x-icon">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body  style = "background-image: url({{ url_for('static', filename='bg1.jpg') }}); background-repeat: no-repeat; background-size: 100% 100%;">
+
+    <!--Effect wrap start-->
+    <div class="effect-wrap">
+        <div class="effect effect-1"></div>
+        <div class="effect effect-2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="effect effect-3"></div>
+        <div class="effect effect-4"></div>
+        <div class="effect effect-5">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!--Effect wrap end-->
+     
+
+    <div class="container" style="margin-bottom: 20px; height: 80%">
+        <br><br>
+        <div  class="card myeffect" style="background-color:rgba(0,0,0,0.5);">
+            <div>
+                <div style="background-color: transparent;">
+                    <br>
+                    <h2 style="color:rgb(255, 141, 35)"><img src="{{ url_for('static', filename='logo2.png') }}">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=".title text-center">Cars Price Prediction System</i></h2>
+                    <br>
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Select Vehicle:</b></label>
+                        </div>
+                        <div class='col-sm-5'>
+                            <select id="vehicle"  name="vehicle" class="form-control " style="width:300px">
+                                <option value="----"></option>
+                                {% for v in vehicle %}
+                               <option value="{{ v }}">{{ v }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div> 
+                    <br>      
+        
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Select Model:</b></label>
+                        </div>
+                        <div class='col-sm-5'>
+                            <select id="model"  name="model" class="form-control " style="width:300px">
+                                <option value="----"></option>
+                                {% for m in models %}
+                            <option value="{{ m }}">{{ m }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div> 
+                    <br>    
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Production Year: </b></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input id="year" type="number" name="year" placeholder="Enter Production Year" class="form-control" style="width:300px">
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>How many Kilometers Drived?: </b></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input id="kilometers" type="number" name="kilometers" placeholder="Enter Kilometer" class="form-control" style="width:300px" min = "0">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Choose your car's drivetrain : </b></label>
+                        </div>
+
+                        <div class="btn-group btn-group-toggle col-sm-5" data-toggle="buttons" >
+                            <label class="btn btn-outline-warning">
+                              <input type="radio" name="drivetrain" id="driveAll" value="All" autocomplete="off"> All
+                            </b></label>
+                            <label class="btn btn-outline-warning">
+                              <input type="radio" name="drivetrain" id="driveFront" value="Front" autocomplete="off">Front
+                            </b></label>
+                            <label class="btn btn-outline-warning">
+                              <input type="radio" name="drivetrain" id="driveRear" value="Rear" autocomplete="off">Rear
+                            </b></label>
+                          </div>
+                    </div>
+                    <br>
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>What is Fuel Type?: </b></label>
+                        </div>
+                        
+                        <div class="btn-group btn-group-toggle col-sm-5" data-toggle="buttons" >
+                            <label class="btn btn-outline-warning">
+                              <input type="radio" name="fuel" id="gasoline" value="gasoline" autocomplete="off"> Gasoline
+                            </b></label>
+                            <label class="btn btn-outline-warning">
+                              <input type="radio" name="fuel" id="gas" value="gas" autocomplete="off"> Gas
+                            </b></label>
+                            <label class="btn btn-outline-warning">
+                              <input type="radio" name="fuel" id="diesel" value="diesel" autocomplete="off"> Diesel
+                            </b></label>
+                            <label class="btn btn-outline-warning">
+                                <input type="radio" name="fuel" id="hybrid-petrol" value="hybrid-petrol" autocomplete="off"> Hybrid-Petrol
+                              </b></label>
+                              <label class="btn btn-outline-warning">
+                                <input type="radio" name="fuel" id="hybrid-diesel" value="hybrid-diesel" autocomplete="off"> Hybrid-Diesel
+                              </b></label>
+                          </div>
+                    </div>
+                    <br>
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>What is you car's state?: </b></label>
+                        </div>
+
+                        <div class="btn-group btn-group-toggle col-sm-5" data-toggle="buttons" >
+                            <label class="btn btn-outline-warning">
+                                <input type="radio" name="state" id="new" value="new" autocomplete="off"> New
+                              </b></label>
+                            <label class="btn btn-outline-warning">
+                              <input type="radio" name="state" id="owned" value="owned" autocomplete="off"> Owned
+                            </b></label>
+                            <label class="btn btn-outline-warning">
+                                <input type="radio" name="state" id="emergency" value="emergency" autocomplete="off"> Emergency
+                            </b></label>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Transmission Type: </b></label>
+                        </div>
+
+                        <div class="btn-group btn-group-toggle col-sm-5" data-toggle="buttons" >
+                            <label class="btn btn-outline-warning">
+                                <input type="radio" name="transmission" id="mechanical" value="mechanical" autocomplete="off"> Mechanical
+                              </b></label>
+                            <label class="btn btn-outline-warning">
+                              <input type="radio" name="transmission" id="automatic" value="automatic" autocomplete="off"> Automatic
+                            </b></label>
+                        </div>
+                        
+                    </div>
+                    <br>
+
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Select Body Type:</b></label>
+                        </div>
+                        <div class='col-sm-5'>
+                            <select id="body_type"  name="body_type" class="form-control " style="width:300px">
+                                <option value="----"></option>
+                                <option value="universal">universal</option>
+                                <option value="suv">suv</option>
+                                <option value="sedan">sedan</option>
+                                <option value="hatchback">hatchback</option>
+                                <option value="liftback">liftback</option>
+                                <option value="minivan">minivan</option>
+                                <option value="van">van</option>
+                                <option value="minibus">minibus</option>
+                                <option value="pickup">pickup</option>
+                                <option value="coupe">coupe</option>
+                                <option value="cabriolet">cabriolet</option>
+                                <option value="limousine">limousine</option>
+                            </select>
+                        </div>
+                    </div> 
+                    <br> 
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Engine Capacity: </b></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input id="capacity" type="number" name="capacity" placeholder="Enter Engine Capacity" class="form-control" style="width:300px">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Number of photos: </b></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input id="nbr_photos" type="number" name="nbr_photos" placeholder="Enter The number of photos" class="form-control" style="width:300px">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Up Counter: </b></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input id="counter" type="number" name="counter" placeholder="Enter Up Counter" class="form-control" style="width:300px">
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="row ml-2">
+                        <div class="col-sm-5">
+                            <label><b>Estimated Price: </b></label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input id="result" type="text" name="display_name" placeholder="Estimated Price" class="form-control" style="width:300px" disabled>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row ml-2">
+                        <div class="col-sm-10">
+                        <center style="margin-left: 233px;"><button onclick="onClicked()" class="btn btn-outline-primary" id="btn">Estimate Price</button> </center>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                    
+                      <a href="https://github.com/Said-bachar/MODAS-CarsPricePrediction" target="_blank"><i class="fa fa-github" style="font-size:24px"></i></a>&nbsp&nbsp&nbsp&nbsp
+                      <a href="https://www.linkedin.com/in/said-bachar/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px"></i></i></a>
+                      <label class = "float-right" style="margin-right: 30px; color:rgb(136, 136, 136);">©made by MODAS with &#129505;</label>
+                    
+                    
+            </div>
+
+              
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function onClicked(){
+            var vehicleObj = document.getElementById("vehicle");
+            var vehicle = vehicleObj.options[vehicleObj.selectedIndex].value;
+            var modelObj = document.getElementById("model");
+            var model = modelObj.options[modelObj.selectedIndex].value;
+            var year = document.getElementById("year").value;
+            var kilometers = document.getElementById("kilometers").value;
+            
+            var drivetrain = $("input[type='radio'][name='drivetrain']:checked").val();
+            var fuel = $("input[type='radio'][name='fuel']:checked").val();
+            var state = $("input[type='radio'][name='state']:checked").val();
+            var transmission = $("input[type='radio'][name='transmission']:checked").val();
+
+            var bodyObj = document.getElementById("body_type");
+            var bodytype = bodyObj.options[bodyObj.selectedIndex].value;
+
+            var engineCapacity = document.getElementById("capacity").value;
+            var numberOfPhotos = document.getElementById("nbr_photos").value;
+            var upCounter = document.getElementById("counter").value;
+
+            $.post("predictedPrice", {
+                vehicle : vehicle,
+                model : model,
+                year : year,
+                kilometers : kilometers,
+                drivetrain : drivetrain,
+                fuel : fuel,
+                state : state,
+                transmission : transmission,
+                bodytype : bodytype,
+                engineCapacity : engineCapacity,
+                numberOfPhotos : numberOfPhotos,
+                upCounter : upCounter
+            }, function(data, status){
+                document.getElementById("result").value = data;
+            })
+        }
+    </script>
+
+</body>
+</html>
