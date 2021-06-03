@@ -80,8 +80,12 @@
                             <label><b>Select Vehicle:</b></label>
                         </div>
                         <div class='col-sm-5'>
-                            <select id="vehicle"  name="vehicle" class="form-control " style="width:300px">
-                                <option value="----"></option>
+                            <select 
+                                   id="vehicle"  
+                                   name="vehicle" 
+                                   class="form-control " 
+                                   style="width:300px; border-radius: 0 10px 0 10px;">
+                                <option value="">----------- Vehicle ----------</option>
                                 {% for v in vehicle %}
                                <option value="{{ v }}">{{ v }}</option>
                                 {% endfor %}
@@ -95,7 +99,12 @@
                             <label><b>Select Model:</b></label>
                         </div>
                         <div class='col-sm-5'>
-                            <select id="model"  name="model" class="form-control " style="width:300px">
+                            <select 
+                                id="model"  
+                                name="model" 
+                                class="form-control " 
+                                style="width:300px; border-radius: 0 10px 0 10px;"
+                            >
                                 <option value="----"></option>
                                 {% for m in models %}
                             <option value="{{ m }}">{{ m }}</option>
@@ -110,7 +119,13 @@
                             <label><b>Production Year: </b></label>
                         </div>
                         <div class="col-sm-5">
-                            <input id="year" type="number" name="year" placeholder="Enter Production Year" class="form-control" style="width:300px">
+                            <input 
+                                  id="year" 
+                                  type="number" 
+                                  name="year" 
+                                  placeholder="Enter Production Year" 
+                                  class="form-control" 
+                                  style="width:300px; border-radius: 0 10px 0 10px;">
                         </div>
                     </div>
                     <br>
@@ -121,7 +136,14 @@
                             <label><b>How many Kilometers Drived?: </b></label>
                         </div>
                         <div class="col-sm-5">
-                            <input id="kilometers" type="number" name="kilometers" placeholder="Enter Kilometer" class="form-control" style="width:300px" min = "0">
+                            <input 
+                                   id="kilometers" 
+                                   type="number" 
+                                   name="kilometers" 
+                                   placeholder="Enter Kilometer" 
+                                   class="form-control" 
+                                   style="width:300px; border-radius: 0 10px 0 10px;" 
+                                   min = "0">
                         </div>
                     </div>
                     <br>
@@ -212,8 +234,13 @@
                             <label><b>Select Body Type:</b></label>
                         </div>
                         <div class='col-sm-5'>
-                            <select id="body_type"  name="body_type" class="form-control " style="width:300px">
-                                <option value="----"></option>
+                            <select 
+                                     id="body_type"  
+                                     name="body_type" 
+                                     class="form-control " 
+                                     style="width:300px; border-radius: 0 10px 0 10px;"
+                            >
+                                <option value="">------------ Body type ------------</option>
                                 <option value="universal">universal</option>
                                 <option value="suv">suv</option>
                                 <option value="sedan">sedan</option>
@@ -236,7 +263,13 @@
                             <label><b>Engine Capacity: </b></label>
                         </div>
                         <div class="col-sm-5">
-                            <input id="capacity" type="number" name="capacity" placeholder="Enter Engine Capacity" class="form-control" style="width:300px">
+                            <input 
+                                    id="capacity" 
+                                    type="number" 
+                                    name="capacity" 
+                                    placeholder="Enter Engine Capacity" 
+                                    class="form-control" 
+                                    style="width:300px; border-radius: 0 10px 0 10px;">
                         </div>
                     </div>
                     <br>
@@ -246,7 +279,13 @@
                             <label><b>Number of photos: </b></label>
                         </div>
                         <div class="col-sm-5">
-                            <input id="nbr_photos" type="number" name="nbr_photos" placeholder="Enter The number of photos" class="form-control" style="width:300px">
+                            <input 
+                                    id="nbr_photos" 
+                                    type="number" 
+                                    name="nbr_photos" 
+                                    placeholder="Enter The number of photos" 
+                                    class="form-control" 
+                                    style="width:300px; border-radius: 0 10px 0 10px;">
                         </div>
                     </div>
                     <br>
@@ -256,7 +295,13 @@
                             <label><b>Up Counter: </b></label>
                         </div>
                         <div class="col-sm-5">
-                            <input id="counter" type="number" name="counter" placeholder="Enter Up Counter" class="form-control" style="width:300px">
+                            <input 
+                                    id="counter" 
+                                    type="number" 
+                                    name="counter" 
+                                    placeholder="Enter Up Counter" 
+                                    class="form-control" 
+                                    style="width:300px; border-radius: 0 10px 0 10px;">
                         </div>
                     </div>
                     <br>
@@ -266,7 +311,14 @@
                             <label><b>Estimated Price: </b></label>
                         </div>
                         <div class="col-sm-5">
-                            <input id="result" type="text" name="display_name" placeholder="Estimated Price" class="form-control" style="width:300px" disabled>
+                            <input 
+                                    id="result" 
+                                    type="text" 
+                                    name="display_name" 
+                                    placeholder="Estimated Price" 
+                                    class="form-control" 
+                                    style="width:300px; border-radius: 0 10px 0 10px;" 
+                                    disabled>
                         </div>
                     </div>
                     <br>
