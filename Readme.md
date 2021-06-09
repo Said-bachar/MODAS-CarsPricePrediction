@@ -24,7 +24,7 @@
 
 ## About The Project
 <div align="center">
-    <img alt="Demo" src="./static/demo/demo.gif" width=60%">
+    <img alt="Demo" src="./static/demo/demo.gif" width=85%">
 </div>
 
 
@@ -32,7 +32,7 @@ This project is about Cars Selling Price Prediction, In this project we will tak
 
 ## Project in one image 
 <div align="center">
-    <img alt="Demo" src="./static/demo/demo.png" width=60%">
+    <img alt="Demo" src="./static/demo/demo.png" width=75%">
 </div>
 
 ## Tools and Technologies
