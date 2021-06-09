@@ -39,7 +39,7 @@ This project is about Cars Selling Price Prediction, In this project we will tak
 
 ![Python 3.8.2](https://img.shields.io/badge/Python-3.8.2-brightgreen.svg) ![scikit-learnn](https://img.shields.io/badge/Library-Pandas_|_Numpy_|_Scikit_Learn-orange.svg) 
 
-• In this project we used a dataset from kaggle.com, we had trained a **Machine Learning** model and i got **95.92%** accuracy using Random Forest Regressor.
+• In this project we used a dataset from kaggle.com, we had trained a **Machine Learning** model and we got **95.92%** accuracy using Random Forest Regressor.
 
 
 • This repository consists of files required to deploy a ___Machine Learning Web App___ created with ___Flask___ 
